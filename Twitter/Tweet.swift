@@ -20,7 +20,8 @@ class Tweet: NSObject {
         user = User(dictionary: dictionary["user"] as! NSDictionary)
         text = dictionary["text"] as? String
         createdAtString = dictionary["created_at"] as? String
-        
+        retweets = dictionary["retweet_count"] as? Int
+        likes = dictionary["favorite_count"] as? Int
         // Time format
         var formatter = NSDateFormatter()
         formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
