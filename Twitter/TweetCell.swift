@@ -21,9 +21,11 @@ class TweetCell: UITableViewCell {
     
     @IBOutlet weak var replyIcon: UIImageView!
     
-    @IBOutlet weak var retweetIcon: UIImageView!
+    @IBOutlet weak var retweetButton: UIButton!
     
-    @IBOutlet weak var likeIcon: UIImageView!
+    
+    @IBOutlet weak var likeButton: UIButton!
+
     
     @IBOutlet weak var numRetweet: UILabel!
     
@@ -32,6 +34,9 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     
     let currentUser = User.currentUser
+    
+    let tapRetweet = UITapGestureRecognizer()
+    let tapFavorite = UITapGestureRecognizer()
     
     var tweet: Tweet!{
         didSet {
@@ -44,13 +49,16 @@ class TweetCell: UITableViewCell {
             let comp = calendar.components([.Month, .Day, .Year], fromDate: tweet.createdAt!)
             
             time.text = "\(comp.month)/\(comp.day)/\(comp.year)"
-            numRetweet.text = String(tweet.retweets)
-            numLike.text = String(tweet.likes)
+            numRetweet.text = "\(tweet.retweets!)"
+            numLike.text = "\(tweet.likes!)"
+            print(numRetweet.text)
+            
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        content.sizeToFit()
         // Initialization code
     }
 
@@ -60,6 +68,6 @@ class TweetCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-  
+
 
 }

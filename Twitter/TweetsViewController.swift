@@ -12,6 +12,7 @@ import BDBOAuth1Manager
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var tweets: [Tweet]?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,45 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.tweet = tweets![indexPath.row]
         return cell
+    }
+    
+
+    @IBAction func retweetAction(sender: AnyObject) {
+        
+        let button = sender as! UIButton
+        let view = button.superview!
+        let cell = view.superview as! TweetCell
+        
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+        
+        let path = tweet.id
+        
+        TwitterClient.sharedInstance.retweet(path!, params: nil) { (error) -> () in
+            print("Retweeting")
+            tweet.retweets = tweet.retweets! + 1
+            self.tableView.reloadData()
+        }
+
+    }
+    
+    @IBAction func likeAction(sender: AnyObject) {
+        let button = sender as! UIButton
+        let view = button.superview!
+        let cell = view.superview as! TweetCell
+        
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+        
+        
+        let path = tweet.id
+        
+        TwitterClient.sharedInstance.favorite(path!, params: nil) { (error) -> () in
+            print("Liking")
+            tweet.likes = tweet.likes! + 1
+            self.tableView.reloadData()
+        }
+
     }
     
     
