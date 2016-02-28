@@ -26,8 +26,7 @@ class Tweet: NSObject {
         createdAtString = dictionary["created_at"] as? String
         retweets = dictionary["retweet_count"] as? Int
         likes = dictionary["favorite_count"] as? Int
-        isRetweeted = dictionary["retweeted"] as? Bool
-        isFavorited = dictionary["favorited"] as? Bool
+        
         id = dictionary["id"] as? Int
         // Time format
         var formatter = NSDateFormatter()

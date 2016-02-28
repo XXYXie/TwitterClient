@@ -20,7 +20,6 @@ class User: NSObject {
     var tagline: String?
     var dictionary: NSDictionary
 
-    
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
         
@@ -61,12 +60,14 @@ class User: NSObject {
         
         set(user) {
             _currentUser = user
+            print(_currentUser)
             //User need to implement NSCoding; but, JSON also serialized by default
             if let _ = _currentUser {
                 var data: NSData?
                 do {
                     try data = NSJSONSerialization.dataWithJSONObject(user!.dictionary, options: .PrettyPrinted)
                     NSUserDefaults.standardUserDefaults().setObject(data, forKey: currentUserKey)
+                    NSUserDefaults.standardUserDefaults().synchronize()
                 } catch {
                     print(error)
                 }

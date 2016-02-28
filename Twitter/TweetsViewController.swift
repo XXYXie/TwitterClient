@@ -18,7 +18,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
         // Do any additional setup after loading the view.
         TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion: { (tweets, error) -> () in
             self.tweets = tweets
@@ -48,6 +47,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     */
 
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {
@@ -102,6 +102,20 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.tableView.reloadData()
         }
 
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let tweet = tweets![indexPath!.row]
+        
+        let detailViewController = segue.destinationViewController as! TweetDetailViewController
+        
+        detailViewController.tweet = tweet
+        
+        print("prepare for segue called")
+        
     }
     
     

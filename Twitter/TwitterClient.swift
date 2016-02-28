@@ -43,7 +43,6 @@ class TwitterClient: BDBOAuth1SessionManager {
         loginCompletion = completion
         
         // Fetch request token and redirect to authorization page
-        
         TwitterClient.sharedInstance.requestSerializer.removeAccessToken()
         TwitterClient.sharedInstance.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string:"twitterXXY://oauth"), scope: nil, success: {( requestToken: BDBOAuth1Credential!) -> Void in
             print("Got the request token")
@@ -66,6 +65,7 @@ class TwitterClient: BDBOAuth1SessionManager {
                 //print("user:\(response)")
                 var user = User(dictionary: response as! NSDictionary)
                 print("user: \(user.name)")
+                User.currentUser = user
                 self.loginCompletion?(user: user, error: nil)
                 }, failure: {(operation: NSURLSessionDataTask?, error: NSError!) -> Void in
                     print("error getting current user")

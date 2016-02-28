@@ -34,10 +34,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     
     let currentUser = User.currentUser
-    
-    let tapRetweet = UITapGestureRecognizer()
-    let tapFavorite = UITapGestureRecognizer()
-    
+
     var tweet: Tweet!{
         didSet {
             username.text = tweet.user!.name
