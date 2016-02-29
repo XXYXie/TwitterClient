@@ -15,11 +15,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    /*@IBAction func tapProfile(sender: AnyObject) {
-        let profileTap = sender as! UIGestureRecognizer
-        print("tap")
-    }
-    */
+
     
     var tweets: [Tweet]?
     
@@ -50,12 +46,6 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func onLogout(sender: AnyObject) {
         User.currentUser?.logout()
     }
-
-    func profileDetailSegue(notification: NSNotification) {
-        performSegueWithIdentifier("ProfileDetailSegue", sender: notification.userInfo!["user"])
-    }
-    
-
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tweets != nil {
@@ -65,15 +55,25 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             return 0
         }
     }
+   
+    func profileDetailSegue(gesture: UITapGestureRecognizer) {
+        let tweetCell = gesture.view?.superview?.superview as! TweetCell
+        performSegueWithIdentifier("ProfileDetailSegue", sender: tweetCell.tweet!)
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell", forIndexPath: indexPath) as! TweetCell
         
+        let gestureRecognizer = UITapGestureRecognizer()
+        gestureRecognizer.addTarget(self, action: "profileDetailSegue:")
+        cell.profilePic.userInteractionEnabled = true
+        cell.profilePic.addGestureRecognizer(gestureRecognizer)
         cell.tweet = tweets![indexPath.row]
+        
         return cell
     }
     
-
+ 
     @IBAction func retweetAction(sender: AnyObject) {
         
         let button = sender as! UIButton
@@ -131,10 +131,20 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let tweet = tweets![indexPath!.row]
             let detailViewController = segue.destinationViewController as! TweetDetailViewController
             detailViewController.tweet = tweet
-        }else if(segue.identifier == "ProfileDetailSegue"){
-            let user = sender as! User
+        }
+        if(segue.identifier == "ProfileDetailSegue"){
+            let tweet = sender as! Tweet
             let profileDetailViewController = segue.destinationViewController as! ProfileDetailViewController
-            profileDetailViewController.user = user
+            profileDetailViewController.user = tweet.user
+            profileDetailViewController.tweet = tweet
+            
+        }
+        if(segue.identifier == "ComposeSegue"){
+            if let createTweet = sender as? Tweet {
+                let composeViewController = segue.destinationViewController as! ComposeNewViewController
+                composeViewController.composeTweet = createTweet
+            }
+
         }
 
         

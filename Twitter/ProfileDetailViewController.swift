@@ -40,9 +40,9 @@ class ProfileDetailViewController: UIViewController {
         userhandle.text = "@\(user!.screenname!)"
         profileDescription.text = user.tagline
         profilePic.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
-        numTweets.text = "\(tweet.user!.numTweets)"
-        numFollowers.text = "\(tweet.user!.numFollowers)"
-        numFollowing.text = "\(tweet.user!.numFollowing)"
+        numTweets.text = "\(tweet.user!.numTweets!)"
+        numFollowers.text = "\(tweet.user!.numFollowers!)"
+        numFollowing.text = "\(tweet.user!.numFollowing!)"
         
         if user.profileBackgroundUrl != nil {
             headerImage.setImageWithURL(NSURL(string: user!.profileBackgroundUrl!)!)

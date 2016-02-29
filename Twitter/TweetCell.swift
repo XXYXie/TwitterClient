@@ -50,10 +50,7 @@ class TweetCell: UITableViewCell {
             time.text = "\(comp.month)/\(comp.day)/\(comp.year)"
             numRetweet.text = "\(tweet.retweets!)"
             numLike.text = "\(tweet.likes!)"
-            
-            
-            //replyIcon.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
-            
+
             print(numRetweet.text)
             
         }

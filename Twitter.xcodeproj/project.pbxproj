@@ -18,6 +18,10 @@
 		9554D7261C728E650072A7FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9554D7241C728E650072A7FE /* Main.storyboard */; };
 		9554D7281C728E650072A7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9554D7271C728E650072A7FE /* Assets.xcassets */; };
 		9554D72B1C728E650072A7FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9554D7291C728E650072A7FE /* LaunchScreen.storyboard */; };
+		95615A5C1C83CE3700E704C2 /* compose.png in Resources */ = {isa = PBXBuildFile; fileRef = 95615A5B1C83CE3700E704C2 /* compose.png */; };
+		95615A5E1C83CE6900E704C2 /* ComposeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95615A5D1C83CE6900E704C2 /* ComposeNewViewController.swift */; };
+		95615A601C83CEFA00E704C2 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 95615A5F1C83CEFA00E704C2 /* cancel.png */; };
+		95615A641C83D06700E704C2 /* twitterColorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95615A631C83D06700E704C2 /* twitterColorIcon.png */; };
 		9564CFF71C7AB8A0003D8E86 /* retweet-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9564CFF61C7AB8A0003D8E86 /* retweet-action-on.png */; };
 		9564CFF91C7AB8BC003D8E86 /* like-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9564CFF81C7AB8BC003D8E86 /* like-action-on.png */; };
 		95E418A71C8277D5001F5388 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E418A61C8277D5001F5388 /* TweetDetailViewController.swift */; };
@@ -44,6 +48,10 @@
 		9554D7271C728E650072A7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9554D72A1C728E650072A7FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9554D72C1C728E650072A7FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95615A5B1C83CE3700E704C2 /* compose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compose.png; path = ../../../Downloads/compose.png; sourceTree = "<group>"; };
+		95615A5D1C83CE6900E704C2 /* ComposeNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeNewViewController.swift; sourceTree = "<group>"; };
+		95615A5F1C83CEFA00E704C2 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = ../../../Downloads/cancel.png; sourceTree = "<group>"; };
+		95615A631C83D06700E704C2 /* twitterColorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitterColorIcon.png; path = ../../../Downloads/twitterColorIcon.png; sourceTree = "<group>"; };
 		9564CFF61C7AB8A0003D8E86 /* retweet-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retweet-action-on.png"; path = "../../../Downloads/retweet-action-on.png"; sourceTree = "<group>"; };
 		9564CFF81C7AB8BC003D8E86 /* like-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-action-on.png"; path = "../../../Downloads/like-action-on.png"; sourceTree = "<group>"; };
 		95E418A61C8277D5001F5388 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +96,9 @@
 		9545BD781C7954D300696CD3 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				95615A631C83D06700E704C2 /* twitterColorIcon.png */,
+				95615A5F1C83CEFA00E704C2 /* cancel.png */,
+				95615A5B1C83CE3700E704C2 /* compose.png */,
 				95E418AA1C8293C0001F5388 /* twitter icon small.png */,
 				9564CFF81C7AB8BC003D8E86 /* like-action-on.png */,
 				9564CFF61C7AB8A0003D8E86 /* retweet-action-on.png */,
@@ -130,6 +141,7 @@
 				95E418A61C8277D5001F5388 /* TweetDetailViewController.swift */,
 				9545BD7F1C795F1000696CD3 /* TweetCell.swift */,
 				95E418A81C827EFC001F5388 /* ProfileDetailViewController.swift */,
+				95615A5D1C83CE6900E704C2 /* ComposeNewViewController.swift */,
 				9554D7241C728E650072A7FE /* Main.storyboard */,
 				9554D7271C728E650072A7FE /* Assets.xcassets */,
 				9554D7291C728E650072A7FE /* LaunchScreen.storyboard */,
@@ -216,12 +228,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95615A5C1C83CE3700E704C2 /* compose.png in Resources */,
 				95E418AB1C8293C0001F5388 /* twitter icon small.png in Resources */,
 				9554D72B1C728E650072A7FE /* LaunchScreen.storyboard in Resources */,
+				95615A601C83CEFA00E704C2 /* cancel.png in Resources */,
 				9545BD7E1C7957E900696CD3 /* retweet icon.png in Resources */,
 				9554D7281C728E650072A7FE /* Assets.xcassets in Resources */,
 				9564CFF91C7AB8BC003D8E86 /* like-action-on.png in Resources */,
 				9545BD7D1C7957E900696CD3 /* reply icon.png in Resources */,
+				95615A641C83D06700E704C2 /* twitterColorIcon.png in Resources */,
 				9554D7261C728E650072A7FE /* Main.storyboard in Resources */,
 				9564CFF71C7AB8A0003D8E86 /* retweet-action-on.png in Resources */,
 				9545BD771C79532D00696CD3 /* twitter icon.png in Resources */,
@@ -284,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95615A5E1C83CE6900E704C2 /* ComposeNewViewController.swift in Sources */,
 				95EC78041C73F10E000E464D /* User.swift in Sources */,
 				95E418A91C827EFC001F5388 /* ProfileDetailViewController.swift in Sources */,
 				9545BD801C795F1000696CD3 /* TweetCell.swift in Sources */,

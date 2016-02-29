@@ -29,6 +29,19 @@ class TweetDetailViewController: UIViewController {
     @IBOutlet weak var likeLabel: UILabel!
     
     
+    @IBAction func retweetAction(sender: AnyObject) {
+        TwitterClient.sharedInstance.retweet(tweet.id!, params: nil) { (error) -> () in
+            self.tweet.retweets = self.tweet.retweets! + 1
+        }
+    }
+    
+    @IBAction func likeAction(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorite(tweet.id!, params: nil) { (error) -> () in
+            self.tweet.likes = self.tweet.likes! + 1
+        }
+
+    }
+    
     let currentUser = User.currentUser
 
     var tweet: Tweet!
