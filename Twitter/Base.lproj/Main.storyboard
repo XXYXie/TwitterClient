@@ -72,10 +72,17 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mZW-Hn-crD">
                                                     <rect key="frame" x="8" y="8" width="58" height="58"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="58" id="EpY-ua-jTZ"/>
                                                         <constraint firstAttribute="width" constant="58" id="dtU-em-STK"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="9UQ-U1-iOW" appends="YES" id="gio-JZ-v3x"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Xueyan Xie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtd-NA-9Vd">
                                                     <rect key="frame" x="83" y="8" width="59" height="14"/>
@@ -178,7 +185,7 @@
                                             <outlet property="time" destination="yDs-Sr-6v4" id="i86-ku-o6l"/>
                                             <outlet property="userhandle" destination="Pea-XH-jV4" id="PWB-ew-Rdh"/>
                                             <outlet property="username" destination="mtd-NA-9Vd" id="Gxi-yz-hIB"/>
-                                            <segue destination="iM2-x5-iuC" kind="push" id="JXr-Jp-2M8"/>
+                                            <segue destination="iM2-x5-iuC" kind="push" identifier="TweetDetailSegue" id="mZR-Zc-Wsw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -212,6 +219,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8n-M0-m6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9UQ-U1-iOW">
+                    <connections>
+                        <segue destination="amC-TX-Rdf" kind="push" identifier="ProfileDetailSegue" id="H6P-jk-mXU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1033" y="274"/>
         </scene>
@@ -290,10 +302,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HBe-jO-zlP"/>
+                    <connections>
+                        <outlet property="followersLabel" destination="Cfx-lh-3Zh" id="fjd-rN-xQ9"/>
+                        <outlet property="followingLabel" destination="X15-O4-yd3" id="qKr-Vx-jJ3"/>
+                        <outlet property="headerImage" destination="eNv-g3-lqd" id="mzA-DZ-7gb"/>
+                        <outlet property="numFollowers" destination="PEJ-jY-NHC" id="1xH-fQ-qXz"/>
+                        <outlet property="numFollowing" destination="00T-Zv-ZWQ" id="eh7-kd-SeI"/>
+                        <outlet property="numTweets" destination="wHf-Jl-Scy" id="tNf-nc-f8H"/>
+                        <outlet property="profileDescription" destination="7bH-cq-7Fr" id="bgW-9g-ALr"/>
+                        <outlet property="profilePic" destination="4ED-fI-M0v" id="bfj-g1-WuF"/>
+                        <outlet property="tweetsLabel" destination="m3q-YD-esb" id="Oo9-VE-3CT"/>
+                        <outlet property="userhandle" destination="bAj-tc-1eM" id="43x-Lm-mae"/>
+                        <outlet property="username" destination="GIp-qT-n2U" id="hNq-hA-Kdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2p-h0-YcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="-387"/>
+            <point key="canvasLocation" x="1496" y="61"/>
         </scene>
         <!--Tweet-->
         <scene sceneID="taa-hV-pwy">
@@ -322,8 +348,8 @@
                                 <color key="textColor" red="0.45488083959999998" green="0.45488083959999998" blue="0.45488083959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9: 00 am 02/21/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS9-IG-1t1">
-                                <rect key="frame" x="15" y="229" width="101" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9: 00 am  02/21/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aS9-IG-1t1">
+                                <rect key="frame" x="12" y="229" width="104" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.45488083959999998" green="0.45488083959999998" blue="0.45488083959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -401,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjN-qe-keE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="274"/>
+            <point key="canvasLocation" x="1508" y="522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxi-RO-a7Y">

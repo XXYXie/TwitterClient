@@ -30,7 +30,7 @@ class TweetDetailViewController: UIViewController {
     
     
     let currentUser = User.currentUser
-    
+
     var tweet: Tweet!
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class TweetDetailViewController: UIViewController {
         
         retweetLabel.text = "retweets"
         likeLabel.text = "likes"
-        
+
         print(tweet)
 
 
@@ -58,7 +58,6 @@ class TweetDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

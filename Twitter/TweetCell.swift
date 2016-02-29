@@ -33,7 +33,9 @@ class TweetCell: UITableViewCell {
    
     @IBOutlet weak var time: UILabel!
     
+    
     let currentUser = User.currentUser
+    
 
     var tweet: Tweet!{
         didSet {
@@ -48,6 +50,10 @@ class TweetCell: UITableViewCell {
             time.text = "\(comp.month)/\(comp.day)/\(comp.year)"
             numRetweet.text = "\(tweet.retweets!)"
             numLike.text = "\(tweet.likes!)"
+            
+            
+            //replyIcon.setImageWithURL(NSURL(string: tweet.user!.profileImageUrl!)!)
+            
             print(numRetweet.text)
             
         }
@@ -57,6 +63,7 @@ class TweetCell: UITableViewCell {
         super.awakeFromNib()
         content.sizeToFit()
         // Initialization code
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
