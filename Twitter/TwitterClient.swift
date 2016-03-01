@@ -106,16 +106,20 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     
     
-    func tweetCompose(params: NSDictionary!, completion: (tweet: Tweet?, error: NSError?) -> ()) {
-        POST("1.1/statuses/update.json", parameters: params, progress: nil, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
-            print("successful tweet")
-            let tweet = Tweet(dictionary: response as! NSDictionary)
-            completion(tweet: tweet, error: nil)
-            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
-                print("failed tweet")
-                completion(tweet: nil, error: error)
-        })
+    func status(text: String, replyId: Int, params: NSDictionary?, completion: (error: NSError?) -> ()){
+        var parameters:[String: AnyObject] = ["status": text]
+        if replyId != 0 {
+            parameters["in_reply_to_tweetCompose_id"] = replyId
+        }
+        
+        POST("https://api.twitter.com/1.1/statuses/update.json", parameters: parameters, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+                print("Successfully update")
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                print("Update failed")
+                completion(error: error)
+        }
     }
+
 
 
 }

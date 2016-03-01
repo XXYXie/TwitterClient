@@ -56,23 +56,15 @@ class ComposeNewViewController: UIViewController, UITextViewDelegate {
         view.endEditing(true)
     }
     @IBAction func sendTweet(sender: AnyObject) {
-        var params = [String : AnyObject]()
-        params["status"] = beforeType.text
-        
-        if composeTweet != nil {
-            params["in_reply_to_status_id"] = composeTweet!.id!
+      
+        TwitterClient.sharedInstance.status(textTweet.text, replyId: 0, params: nil){(error) -> () in
         }
-        
-        TwitterClient.sharedInstance.tweetCompose(params as NSDictionary) { (tweet, error) -> () in
-           
-        }
-        
+    
         self.dismissViewControllerAnimated(true) { () -> Void in
-            print("Cancel sending tweet.")
+            print("Dismissed")
         }
+
     }
-
-
 
 
 }
