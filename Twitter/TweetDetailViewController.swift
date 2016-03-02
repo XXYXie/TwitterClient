@@ -28,20 +28,24 @@ class TweetDetailViewController: UIViewController {
     
     @IBOutlet weak var likeLabel: UILabel!
     
+    @IBOutlet weak var replyButton: UIButton!
     
     @IBAction func retweetAction(sender: AnyObject) {
         TwitterClient.sharedInstance.retweet(tweet.id!, params: nil) { (error) -> () in
             self.tweet.retweets = self.tweet.retweets! + 1
+            self.numRetweet.text = "\(self.tweet.retweets!)"
         }
     }
     
     @IBAction func likeAction(sender: AnyObject) {
         TwitterClient.sharedInstance.favorite(tweet.id!, params: nil) { (error) -> () in
             self.tweet.likes = self.tweet.likes! + 1
+            self.numLike.text = "\(self.tweet.likes!)"
         }
 
     }
     
+
     let currentUser = User.currentUser
 
     var tweet: Tweet!
@@ -81,5 +85,9 @@ class TweetDetailViewController: UIViewController {
     }
     */
 
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let replyViewController = segue.destinationViewController as! ReplyViewController
+        replyViewController.tweet = tweet
     }
 }

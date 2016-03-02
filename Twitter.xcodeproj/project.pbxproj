@@ -24,6 +24,7 @@
 		95615A641C83D06700E704C2 /* twitterColorIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 95615A631C83D06700E704C2 /* twitterColorIcon.png */; };
 		9564CFF71C7AB8A0003D8E86 /* retweet-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9564CFF61C7AB8A0003D8E86 /* retweet-action-on.png */; };
 		9564CFF91C7AB8BC003D8E86 /* like-action-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 9564CFF81C7AB8BC003D8E86 /* like-action-on.png */; };
+		9587B0471C879B5F0016736D /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9587B0461C879B5F0016736D /* ReplyViewController.swift */; };
 		95E418A71C8277D5001F5388 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E418A61C8277D5001F5388 /* TweetDetailViewController.swift */; };
 		95E418A91C827EFC001F5388 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E418A81C827EFC001F5388 /* ProfileDetailViewController.swift */; };
 		95E418AB1C8293C0001F5388 /* twitter icon small.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E418AA1C8293C0001F5388 /* twitter icon small.png */; };
@@ -54,6 +55,7 @@
 		95615A631C83D06700E704C2 /* twitterColorIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitterColorIcon.png; path = ../../../Downloads/twitterColorIcon.png; sourceTree = "<group>"; };
 		9564CFF61C7AB8A0003D8E86 /* retweet-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "retweet-action-on.png"; path = "../../../Downloads/retweet-action-on.png"; sourceTree = "<group>"; };
 		9564CFF81C7AB8BC003D8E86 /* like-action-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like-action-on.png"; path = "../../../Downloads/like-action-on.png"; sourceTree = "<group>"; };
+		9587B0461C879B5F0016736D /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		95E418A61C8277D5001F5388 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		95E418A81C827EFC001F5388 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		95E418AA1C8293C0001F5388 /* twitter icon small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter icon small.png"; path = "../../../Downloads/twitter icon small.png"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				9545BD7F1C795F1000696CD3 /* TweetCell.swift */,
 				95E418A81C827EFC001F5388 /* ProfileDetailViewController.swift */,
 				95615A5D1C83CE6900E704C2 /* ComposeNewViewController.swift */,
+				9587B0461C879B5F0016736D /* ReplyViewController.swift */,
 				9554D7241C728E650072A7FE /* Main.storyboard */,
 				9554D7271C728E650072A7FE /* Assets.xcassets */,
 				9554D7291C728E650072A7FE /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				95E418A71C8277D5001F5388 /* TweetDetailViewController.swift in Sources */,
 				95EA82641C728ED500D2B4D4 /* TwitterClient.swift in Sources */,
 				9554D7211C728E650072A7FE /* AppDelegate.swift in Sources */,
+				9587B0471C879B5F0016736D /* ReplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
