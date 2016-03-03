@@ -42,13 +42,10 @@ class ComposeNewViewController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     @IBAction func cancel(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in
             print("Cancel sending tweet.")
         }
-
     }
     
     // On tap, hid keyboard

@@ -26,6 +26,12 @@ class ReplyViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func onCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            print("Cancel reply.")
+        }
+    }
     
     @IBAction func reply(sender: AnyObject) {
         TwitterClient.sharedInstance.status(textBox.text, replyId: 0, params: nil){(error) -> () in
@@ -33,11 +39,7 @@ class ReplyViewController: UIViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
             print("Reply")
         }
-    }
-    @IBAction func cancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true) { () -> Void in
-            print("Has been dismissed")
-        }
+
     }
     
 }

@@ -60,21 +60,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-St-a9a">
-                                <rect key="frame" x="264" y="78" width="36" height="34"/>
-                                <state key="normal" title="Button" image="cancel.png"/>
-                                <connections>
-                                    <action selector="cancel:" destination="11d-ah-t16" eventType="touchUpInside" id="xwo-3R-Mfo"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xA3-0L-G5f">
-                                <rect key="frame" x="0.0" y="129" width="320" height="203"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7S-yT-4R0">
                                 <rect key="frame" x="274" y="343" width="39" height="30"/>
                                 <constraints>
@@ -83,6 +68,21 @@
                                 <state key="normal" title="Reply"/>
                                 <connections>
                                     <action selector="reply:" destination="11d-ah-t16" eventType="touchUpInside" id="Xbx-W3-lCK"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xA3-0L-G5f">
+                                <rect key="frame" x="0.0" y="101" width="320" height="244"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-YF-Oyo">
+                                <rect key="frame" x="274" y="72" width="36" height="34"/>
+                                <state key="normal" title="Button" image="cancel.png"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="11d-ah-t16" eventType="touchUpInside" id="osY-a5-jPs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -414,7 +414,7 @@
                                 <rect key="frame" x="275" y="31" width="36" height="34"/>
                                 <state key="normal" title="Button" image="cancel.png"/>
                                 <connections>
-                                    <action selector="cancel:" destination="iw1-va-qtu" eventType="touchUpInside" id="BdV-ru-vcp"/>
+                                    <action selector="cancel:" destination="iw1-va-qtu" eventType="touchUpInside" id="3hu-wJ-aLC"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehM-gA-R7h">
@@ -535,7 +535,7 @@
                                 <rect key="frame" x="15" y="299" width="26" height="26"/>
                                 <state key="normal" title="Button" image="reply icon.png"/>
                                 <connections>
-                                    <segue destination="11d-ah-t16" kind="push" id="XMK-tQ-d0E"/>
+                                    <segue destination="11d-ah-t16" kind="modal" id="XMK-tQ-d0E"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2df-bB-K0i">
