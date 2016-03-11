@@ -4,8 +4,8 @@
 
 Time spent: **13** hours spent in total
 
-## Part 2:
-## User Stories
+##Part 2:
+User Stories
 
 The following **required** functionality is completed:
 
@@ -51,8 +51,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-Part 1:
-## User Stories
+##Part 1:
+User Stories
 
 The following **required** functionality is completed:
 
